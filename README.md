@@ -22,3 +22,7 @@ python -m sidehustle build site
 
 Outputs are written under `build/`.
 
+## Notes on Data
+- Drafts are stored as JSON files in `data/`.
+- Filenames use a prefix counter plus slug (e.g. `0001-idea.json`).
+- Timestamps are in UTC.
