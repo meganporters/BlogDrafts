@@ -5,6 +5,7 @@ import re
 import sys
 from pathlib import Path
 from . import storage
+from .render import render_index
 
 
 def slugify(text: str) -> str:
@@ -34,16 +35,13 @@ def cmd_build(args: argparse.Namespace) -> int:
     out = Path("build")
     out.mkdir(parents=True, exist_ok=True)
     drafts = storage.list_by_tag(args.tag)
-    items = "\n".join(
-        f"<li><strong>{d.title}</strong> <em>({', '.join(d.tags)})</em><br>"
-        f"<small>{d.created_at}</small><p>{d.body}</p></li>" for d in drafts
-    )
+    items = render_index(args.tag)
     html = f"""
     <html>
     <head><meta charset=\"utf-8\"><title>SideHustle Drafts</title></head>
     <body>
     <h1>SideHustle Drafts</h1>
-    <ul>{items}</ul>
+    {items}
     </body>
     </html>
     """
@@ -82,4 +80,3 @@ def main(argv: list[str] | None = None) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
