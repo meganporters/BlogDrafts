@@ -1,0 +1,6 @@
+chore: update ignore patterns and small cleanups
+
+Context:
+- Shuffled .gitignore entries and added build/*.pyc patterns.
+- No functional changes.
+

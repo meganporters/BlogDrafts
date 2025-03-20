@@ -1,7 +1,7 @@
-AGENTS.md
-__pycache__
 build
-.DS_Store
+AGENTS.md
 *.pyc
-venv
 data/*.tmp
+venv
+.DS_Store
+__pycache__
