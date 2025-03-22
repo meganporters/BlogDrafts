@@ -13,6 +13,9 @@ This repository evolves like a real weekend/night project: small commits, increm
 - Language: Python 3.10+
 - No external services required
 
+## Version
+See `sidehustle/version.py`.
+
 ## Quick Start
 ```
 python -m sidehustle add "My idea title" --tags ai,tools --body "A short description"
